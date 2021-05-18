@@ -3,6 +3,7 @@ trigger ContactCount on Contact (after insert, after update, after delete, after
     Map<Id, List<Contact>> mapAcctIdDelContactList = new Map<Id, List<Contact>>();
     Set<Id> AcctIds = new Set<Id>();    
     List<Account> listAcct = new List<Account>();
+    //
     
     if(trigger.isInsert) {
         for(Contact Con : trigger.New) {
@@ -44,8 +45,7 @@ trigger ContactCount on Contact (after insert, after update, after delete, after
                 AcctIds.add(Con.AccountId);
             }
         }  
-    }      
-
+    }    //
     if(trigger.isDelete) {
         for(Contact Con : trigger.Old) {
             if(String.isNotBlank(Con.AccountId)){
