@@ -45,7 +45,7 @@ trigger ContactCount on Contact (after insert, after update, after delete, after
                 AcctIds.add(Con.AccountId);
             }
         }  
-    }    //
+    }    //git //
     if(trigger.isDelete) {
         for(Contact Con : trigger.Old) {
             if(String.isNotBlank(Con.AccountId)){
